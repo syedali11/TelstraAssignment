@@ -6,18 +6,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     private var tblView: UITableView!
     private var refreshControl: UIRefreshControl?
-    
+    private var reachability: NetworkReachabilityManager!
     private var activityIndicator: UIActivityIndicatorView!
     
     var viewModel = DataViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        reachability = NetworkReachabilityManager.default
+        monitorReachability()
         setupUI()
         setUpRefreshcontrol()
         
@@ -28,64 +30,105 @@ class ViewController: UIViewController {
                 self?.navigationItem.title = self?.viewModel.title
             }
         }
-        
+        // Setup for updateLoadingStatusClosure
+        updateLoadingStatus()
     }
-        override func viewWillLayoutSubviews() {
-            setupAutoLayout()
-            tblView.reloadData()
-        }
-        
-        
-        func setUpRefreshcontrol() {
-            //Add pull to refresh:
-            refreshControl = UIRefreshControl()
-            refreshControl?.tintColor = UIColor.gray
-            refreshControl?.attributedTitle = NSAttributedString(string: "Updating data")
-            if let aControl = refreshControl {
-                tblView?.addSubview(aControl)
+    override func viewWillLayoutSubviews() {
+        setupAutoLayout()
+        tblView.reloadData()
+    }
+    
+    func updateLoadingStatus(){
+        viewModel.updateLoadingStatusClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                let isLoading = self?.viewModel.isLoading ?? false
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.tblView.alpha = 0.0
+                    })
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                    self?.refreshControl?.endRefreshing()
+                    
+                    UIView.animate(withDuration: 0.2, animations: {
+                        self?.tblView.alpha = 1.0
+                    })
+                }
             }
-            refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        }
-        
-        @objc func refreshData() {
-            viewModel.fetchData()
-        }
-        
-        // Setting up the View User Interface
-        func setupUI() {
-            let barHeight:CGFloat
-            if #available(iOS 13.0, *) {
-                barHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-            } else {
-                barHeight = UIApplication.shared.statusBarFrame.height
-            }
-            let displayWidth: CGFloat = self.view.frame.width
-            let displayHeight: CGFloat = self.view.frame.height
-            tblView = UITableView(frame: CGRect(x: 0, y: barHeight + 44, width: displayWidth, height: displayHeight - barHeight))
-            tblView.register(MyCustomCell.self, forCellReuseIdentifier: "cell")
-            tblView.dataSource = self
-            tblView.delegate = self
-            view.addSubview(tblView)
-            tblView.rowHeight = UITableView.automaticDimension
-            tblView.estimatedRowHeight = 44.0
-            tblView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
-            
-            activityIndicator = UIActivityIndicatorView.init(frame: CGRect(x: displayWidth/2 - 15, y: displayHeight/2 - 15, width: 30, height: 30))
-            activityIndicator.style = UIActivityIndicatorView.Style.gray
-            activityIndicator.hidesWhenStopped = true
-            self.view.addSubview(activityIndicator)
-        }
-        
-        // Setting up the tableview Constraints
-        func setupAutoLayout() {
-            tblView.translatesAutoresizingMaskIntoConstraints = false
-            tblView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-            tblView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-            tblView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            tblView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
     }
     
+    func setUpRefreshcontrol() {
+        //Add pull to refresh:
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = themeSubtitleColor
+        if let aControl = refreshControl {
+            tblView?.addSubview(aControl)
+        }
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    @objc func loadData() {
+        if(isConnected()){
+            viewModel.fetchData()
+            refreshControl?.attributedTitle = NSAttributedString(string: "Updating data")
+        }
+        else {
+            notReachableSetUp()
+        }
+    }
+    
+    // Setting up the View User Interface
+    func setupUI() {
+        let barHeight:CGFloat
+        if #available(iOS 13.0, *) {
+            barHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            barHeight = UIApplication.shared.statusBarFrame.height
+        }
+        let displayWidth: CGFloat = self.view.frame.width
+        let displayHeight: CGFloat = self.view.frame.height
+        tblView = UITableView(frame: CGRect(x: 0, y: barHeight + 44, width: displayWidth, height: displayHeight - barHeight))
+        tblView.register(MyCustomCell.self, forCellReuseIdentifier: "cell")
+        tblView.dataSource = self
+        tblView.delegate = self
+        view.addSubview(tblView)
+        tblView.rowHeight = UITableView.automaticDimension
+        tblView.estimatedRowHeight = 44.0
+        tblView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
+        
+        activityIndicator = UIActivityIndicatorView.init(frame: CGRect(x: displayWidth/2 - 15, y: displayHeight/2 - 15, width: 30, height: 30))
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        activityIndicator.hidesWhenStopped = true
+        self.view.addSubview(activityIndicator)
+    }
+    
+    // Setting up the tableview Constraints
+    func setupAutoLayout() {
+        tblView.translatesAutoresizingMaskIntoConstraints = false
+        tblView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tblView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tblView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tblView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
+    // SHOW THE ALERT WHEN HOST IS NOT REACHABLE
+    func notReachableSetUp() {
+        if let isRefreshing = refreshControl?.isRefreshing {
+            if (isRefreshing) {
+                refreshControl?.endRefreshing()
+            }
+        }
+        activityIndicator?.stopAnimating()
+        DispatchQueue.main.async {
+            self.tblView.reloadData()
+            self.showAlert(withTitle: alertTitle, andMessage: alertMessage)
+            self.refreshControl?.attributedTitle = NSAttributedString(string: "No Internet")
+        }
+    }
+}
+
 // MARK: - TableView - DataSource and Delegates
 
 extension ViewController : UITableViewDataSource, UITableViewDelegate {
@@ -112,6 +155,38 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 2.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = themeTitleColor
+        return headerView
+    }
 }
 
+extension ViewController {
+    
+    // ALERT METHOD
+    func showAlert(withTitle title: String?, andMessage message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(cancel)
+        present(alert, animated: true)
+    }
+    
+    // MARK: - Private - Reachability
+    private func monitorReachability() {
+        reachability?.startListening { status in
+            print("Reachability Status Changed: \(status)")
+            self.loadData()
+        }
+    }
+    
+    private func isConnected() ->Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
+}
 
