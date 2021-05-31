@@ -16,8 +16,34 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        setupUI()
-        
+                setupUI()
+
+                // Setup for reloadTableViewClosure
+                viewModel.reloadTableViewClosure = { [weak self] () in
+                    DispatchQueue.main.async {
+                        self?.tblView.reloadData()
+                        self?.navigationItem.title = self?.viewModel.title
+                    }
+                }
+
+                // Setup for updateLoadingStatusClosure
+                viewModel.updateLoadingStatusClosure = { [weak self] () in
+                    DispatchQueue.main.async {
+                        let isLoading = self?.viewModel.isLoading ?? false
+                        if isLoading {
+                            self?.activityIndicator.startAnimating()
+                            UIView.animate(withDuration: 0.2, animations: {
+                                self?.tblView.alpha = 0.0
+                            })
+                        } else {
+                            self?.activityIndicator.stopAnimating()
+                            UIView.animate(withDuration: 0.2, animations: {
+                                self?.tblView.alpha = 1.0
+                            })
+                        }
+                    }
+                }
+                viewModel.fetchData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -65,15 +91,27 @@ class ViewController: UIViewController {
 extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfItems
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:MyCustomCell = (self.tblView.dequeueReusableCell(withIdentifier: "cell") as? MyCustomCell)!
-                    return cell
+        if let cell:MyCustomCell = self.tblView.dequeueReusableCell(withIdentifier: "cell") as? MyCustomCell {
+            let rowData = viewModel.getData(at: indexPath)
+
+            cell.rowData = rowData
+            cell.setImage(url: rowData.imageHref ?? "")
+            return cell
+        } else {
+            let  cell = MyCustomCell(style: .default,
+                                     reuseIdentifier: "cell")
+            let rowData = viewModel.getData(at: indexPath)
+
+            cell.rowData = rowData
+            cell.setImage(url: rowData.imageHref ?? "")
+            return cell
+        }
     }
-    
 }
 
 

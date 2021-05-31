@@ -17,6 +17,8 @@
 		52C47D0026650575009E79BF /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CFF26650575009E79BF /* DataViewModel.swift */; };
 		52C47D052665067A009E79BF /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D042665067A009E79BF /* MyCustomCell.swift */; };
 		52C47D0D26650710009E79BF /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D0C26650710009E79BF /* DataModel.swift */; };
+		52C47D1226650C21009E79BF /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1126650C21009E79BF /* APIHandler.swift */; };
+		52C47D1726650C60009E79BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1626650C60009E79BF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		52C47CFF26650575009E79BF /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		52C47D042665067A009E79BF /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
 		52C47D0C26650710009E79BF /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		52C47D1126650C21009E79BF /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		52C47D1626650C60009E79BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		52C47CF226650472009E79BF /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				52C47D1126650C21009E79BF /* APIHandler.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				52C47CF726650507009E79BF /* ViewExtension.swift */,
+				52C47D1626650C60009E79BF /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -303,12 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C47D1226650C21009E79BF /* APIHandler.swift in Sources */,
 				52C47D0026650575009E79BF /* DataViewModel.swift in Sources */,
 				52C47D052665067A009E79BF /* MyCustomCell.swift in Sources */,
 				52C47CF826650507009E79BF /* ViewExtension.swift in Sources */,
 				52C47CB52664E920009E79BF /* ViewController.swift in Sources */,
 				52C47CB12664E920009E79BF /* AppDelegate.swift in Sources */,
 				52C47D0D26650710009E79BF /* DataModel.swift in Sources */,
+				52C47D1726650C60009E79BF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
