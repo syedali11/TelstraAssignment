@@ -13,6 +13,10 @@
 		52C47CBD2664E921009E79BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C47CBB2664E921009E79BF /* LaunchScreen.storyboard */; };
 		52C47CC82664E922009E79BF /* SwiftAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CC72664E922009E79BF /* SwiftAssignmentTests.swift */; };
 		52C47CD32664E922009E79BF /* SwiftAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CD22664E922009E79BF /* SwiftAssignmentUITests.swift */; };
+		52C47CF826650507009E79BF /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CF726650507009E79BF /* ViewExtension.swift */; };
+		52C47D0026650575009E79BF /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CFF26650575009E79BF /* DataViewModel.swift */; };
+		52C47D052665067A009E79BF /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D042665067A009E79BF /* MyCustomCell.swift */; };
+		52C47D0D26650710009E79BF /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D0C26650710009E79BF /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		52C47CCE2664E922009E79BF /* SwiftAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C47CD22664E922009E79BF /* SwiftAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAssignmentUITests.swift; sourceTree = "<group>"; };
 		52C47CD42664E922009E79BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52C47CF726650507009E79BF /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		52C47CFF26650575009E79BF /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
+		52C47D042665067A009E79BF /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
+		52C47D0C26650710009E79BF /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +103,12 @@
 		52C47CAF2664E920009E79BF /* SwiftAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				52C47CF626650499009E79BF /* Utilities */,
+				52C47CF52665048E009E79BF /* Model */,
+				52C47CF426650487009E79BF /* View */,
+				52C47CF32665047C009E79BF /* ViewModel */,
+				52C47CF226650472009E79BF /* Service */,
 				52C47CB02664E920009E79BF /* AppDelegate.swift */,
-				52C47CB42664E920009E79BF /* ViewController.swift */,
 				52C47CB92664E921009E79BF /* Assets.xcassets */,
 				52C47CBB2664E921009E79BF /* LaunchScreen.storyboard */,
 				52C47CBE2664E921009E79BF /* Info.plist */,
@@ -120,6 +132,46 @@
 				52C47CD42664E922009E79BF /* Info.plist */,
 			);
 			path = SwiftAssignmentUITests;
+			sourceTree = "<group>";
+		};
+		52C47CF226650472009E79BF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		52C47CF32665047C009E79BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				52C47CFF26650575009E79BF /* DataViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		52C47CF426650487009E79BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52C47CB42664E920009E79BF /* ViewController.swift */,
+				52C47D042665067A009E79BF /* MyCustomCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52C47CF52665048E009E79BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52C47D0C26650710009E79BF /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C47CF626650499009E79BF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				52C47CF726650507009E79BF /* ViewExtension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +303,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C47D0026650575009E79BF /* DataViewModel.swift in Sources */,
+				52C47D052665067A009E79BF /* MyCustomCell.swift in Sources */,
+				52C47CF826650507009E79BF /* ViewExtension.swift in Sources */,
 				52C47CB52664E920009E79BF /* ViewController.swift in Sources */,
 				52C47CB12664E920009E79BF /* AppDelegate.swift in Sources */,
+				52C47D0D26650710009E79BF /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
