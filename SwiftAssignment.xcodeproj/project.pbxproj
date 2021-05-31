@@ -19,6 +19,7 @@
 		52C47D0D26650710009E79BF /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D0C26650710009E79BF /* DataModel.swift */; };
 		52C47D1226650C21009E79BF /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1126650C21009E79BF /* APIHandler.swift */; };
 		52C47D1726650C60009E79BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1626650C60009E79BF /* Constants.swift */; };
+		52C47D1C2665354B009E79BF /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1B2665354B009E79BF /* ImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		52C47D0C26650710009E79BF /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		52C47D1126650C21009E79BF /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		52C47D1626650C60009E79BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52C47D1B2665354B009E79BF /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				52C47CF726650507009E79BF /* ViewExtension.swift */,
 				52C47D1626650C60009E79BF /* Constants.swift */,
+				52C47D1B2665354B009E79BF /* ImageExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				52C47CB52664E920009E79BF /* ViewController.swift in Sources */,
 				52C47CB12664E920009E79BF /* AppDelegate.swift in Sources */,
 				52C47D0D26650710009E79BF /* DataModel.swift in Sources */,
+				52C47D1C2665354B009E79BF /* ImageExtension.swift in Sources */,
 				52C47D1726650C60009E79BF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

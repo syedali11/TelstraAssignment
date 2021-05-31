@@ -47,6 +47,7 @@ class MyCustomCell: UITableViewCell {
 
 
     public func setImage(url: String){
+        rowImageView.loadThumbnail(urlSting: url)
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
