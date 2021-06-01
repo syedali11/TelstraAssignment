@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		52C47D1226650C21009E79BF /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1126650C21009E79BF /* APIHandler.swift */; };
 		52C47D1726650C60009E79BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1626650C60009E79BF /* Constants.swift */; };
 		52C47D1C2665354B009E79BF /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D1B2665354B009E79BF /* ImageExtension.swift */; };
+		52C47D2B26667BD9009E79BF /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D2A26667BD9009E79BF /* APIServiceTests.swift */; };
 		555B0932AE624A2F26F8AF5A /* Pods_SwiftAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F28ECFC8093FA5CCAF99AE /* Pods_SwiftAssignment.framework */; };
 		D155C0B4B20E5F1DDE717D9C /* Pods_SwiftAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E318A3F972C3BCEDF8599025 /* Pods_SwiftAssignmentTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		52C47D1126650C21009E79BF /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		52C47D1626650C60009E79BF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		52C47D1B2665354B009E79BF /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		52C47D2A26667BD9009E79BF /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		52C47D3226667D27009E79BF /* SwiftAssignment.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftAssignment.xctestplan; sourceTree = "<group>"; };
 		65EDEF3EFF0986E340CFDA97 /* Pods-SwiftAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAssignment.release.xcconfig"; path = "Target Support Files/Pods-SwiftAssignment/Pods-SwiftAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		76F28ECFC8093FA5CCAF99AE /* Pods_SwiftAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1EF674032D7DA8507B3571 /* Pods-SwiftAssignment-SwiftAssignmentUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftAssignment-SwiftAssignmentUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftAssignment-SwiftAssignmentUITests/Pods-SwiftAssignment-SwiftAssignmentUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +114,6 @@
 				B0DE39934F00781B8C7CD388 /* Pods-SwiftAssignmentTests.debug.xcconfig */,
 				B026FE9A22F82FD4CB0F6D06 /* Pods-SwiftAssignmentTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -156,7 +158,9 @@
 		52C47CC62664E922009E79BF /* SwiftAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				52C47D2A26667BD9009E79BF /* APIServiceTests.swift */,
 				52C47CC72664E922009E79BF /* SwiftAssignmentTests.swift */,
+				52C47D3226667D27009E79BF /* SwiftAssignment.xctestplan */,
 				52C47CC92664E922009E79BF /* Info.plist */,
 			);
 			path = SwiftAssignmentTests;
@@ -477,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C47D2B26667BD9009E79BF /* APIServiceTests.swift in Sources */,
 				52C47CC82664E922009E79BF /* SwiftAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,7 +572,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -622,7 +627,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -640,7 +645,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftAssignment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,7 +665,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftAssignment/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

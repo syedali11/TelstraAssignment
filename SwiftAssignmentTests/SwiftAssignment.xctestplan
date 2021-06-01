@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "F9AFEEE0-3ABD-4D0D-8873-9EFB62EB3C43",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SwiftAssignment.xcodeproj",
+        "identifier" : "52C47CC22664E922009E79BF",
+        "name" : "SwiftAssignmentTests"
+      }
+    }
+  ],
+  "version" : 1
+}
