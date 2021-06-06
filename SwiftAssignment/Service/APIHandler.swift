@@ -6,6 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+let imageCache = NSCache<AnyObject, AnyObject>()
+
 // Define a protocol containing the signature of a function to fetch data
 protocol APIServiceProtocol: AnyObject {
     func getRows( complete: @escaping ( _ success: Bool, _ rows: [Row], _ title: String, _ error: APIError? )->() )
@@ -46,6 +50,8 @@ class APIHandler: APIServiceProtocol {
     //    // MARK: - Private functions
     public static func getData(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+        print(url)
+        
     }
     
     // MARK: - Public function
@@ -53,6 +59,15 @@ class APIHandler: APIServiceProtocol {
     /// downloadImage function will download the thumbnail images
     /// returns Result<Data> as completion handler
     public static func downloadImage(url: URL, completion: @escaping (Result<Data>) -> Void) {
+        if let imageFromCache = imageCache.object(forKey: url as AnyObject) {
+            
+            let data : Data = (imageFromCache as! UIImage).pngData()!
+            
+            completion(.success(data))
+            
+            return
+        }
+        
         getData(url: url) { data, response, error in
             
             if let error = error {
@@ -70,6 +85,12 @@ class APIHandler: APIServiceProtocol {
                 return
             }
             DispatchQueue.main.async() {
+                
+                if let imageToCache = UIImage(data: data){
+                    imageCache.setObject(imageToCache, forKey: url as AnyObject)
+                    
+                }
+                
                 completion(.success(data))
             }
         }
