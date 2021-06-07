@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E5A8F91204EB479AE7F8E42 /* Pods_SwiftAssignment_SwiftAssignmentUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7E8331B1F9D3CB36AB7B41 /* Pods_SwiftAssignment_SwiftAssignmentUITests.framework */; };
 		52C47CB12664E920009E79BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CB02664E920009E79BF /* AppDelegate.swift */; };
 		52C47CB52664E920009E79BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CB42664E920009E79BF /* ViewController.swift */; };
 		52C47CBA2664E921009E79BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C47CB92664E921009E79BF /* Assets.xcassets */; };
 		52C47CBD2664E921009E79BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C47CBB2664E921009E79BF /* LaunchScreen.storyboard */; };
 		52C47CC82664E922009E79BF /* SwiftAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CC72664E922009E79BF /* SwiftAssignmentTests.swift */; };
-		52C47CD32664E922009E79BF /* SwiftAssignmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CD22664E922009E79BF /* SwiftAssignmentUITests.swift */; };
 		52C47CF826650507009E79BF /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CF726650507009E79BF /* ViewExtension.swift */; };
 		52C47D0026650575009E79BF /* DataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47CFF26650575009E79BF /* DataViewModel.swift */; };
 		52C47D052665067A009E79BF /* MyCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C47D042665067A009E79BF /* MyCustomCell.swift */; };
@@ -34,13 +32,6 @@
 			remoteGlobalIDString = 52C47CAC2664E920009E79BF;
 			remoteInfo = SwiftAssignment;
 		};
-		52C47CCF2664E922009E79BF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52C47CA52664E920009E79BF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52C47CAC2664E920009E79BF;
-			remoteInfo = SwiftAssignment;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -54,9 +45,6 @@
 		52C47CC32664E922009E79BF /* SwiftAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C47CC72664E922009E79BF /* SwiftAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAssignmentTests.swift; sourceTree = "<group>"; };
 		52C47CC92664E922009E79BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52C47CCE2664E922009E79BF /* SwiftAssignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftAssignmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52C47CD22664E922009E79BF /* SwiftAssignmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAssignmentUITests.swift; sourceTree = "<group>"; };
-		52C47CD42664E922009E79BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52C47CF726650507009E79BF /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		52C47CFF26650575009E79BF /* DataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewModel.swift; sourceTree = "<group>"; };
 		52C47D042665067A009E79BF /* MyCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCell.swift; sourceTree = "<group>"; };
@@ -93,14 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52C47CCB2664E922009E79BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E5A8F91204EB479AE7F8E42 /* Pods_SwiftAssignment_SwiftAssignmentUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,7 +102,6 @@
 			children = (
 				52C47CAF2664E920009E79BF /* SwiftAssignment */,
 				52C47CC62664E922009E79BF /* SwiftAssignmentTests */,
-				52C47CD12664E922009E79BF /* SwiftAssignmentUITests */,
 				52C47CAE2664E920009E79BF /* Products */,
 				13BFAC2F9981420294153E8E /* Pods */,
 				F2945C41A820C3B1891B9FEE /* Frameworks */,
@@ -134,7 +113,6 @@
 			children = (
 				52C47CAD2664E920009E79BF /* SwiftAssignment.app */,
 				52C47CC32664E922009E79BF /* SwiftAssignmentTests.xctest */,
-				52C47CCE2664E922009E79BF /* SwiftAssignmentUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,15 +142,6 @@
 				52C47CC92664E922009E79BF /* Info.plist */,
 			);
 			path = SwiftAssignmentTests;
-			sourceTree = "<group>";
-		};
-		52C47CD12664E922009E79BF /* SwiftAssignmentUITests */ = {
-			isa = PBXGroup;
-			children = (
-				52C47CD22664E922009E79BF /* SwiftAssignmentUITests.swift */,
-				52C47CD42664E922009E79BF /* Info.plist */,
-			);
-			path = SwiftAssignmentUITests;
 			sourceTree = "<group>";
 		};
 		52C47CF226650472009E79BF /* Service */ = {
@@ -269,26 +238,6 @@
 			productReference = 52C47CC32664E922009E79BF /* SwiftAssignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		52C47CCD2664E922009E79BF /* SwiftAssignmentUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52C47CDD2664E922009E79BF /* Build configuration list for PBXNativeTarget "SwiftAssignmentUITests" */;
-			buildPhases = (
-				79F0D01CF9DA975B23FE924D /* [CP] Check Pods Manifest.lock */,
-				52C47CCA2664E922009E79BF /* Sources */,
-				52C47CCB2664E922009E79BF /* Frameworks */,
-				52C47CCC2664E922009E79BF /* Resources */,
-				F7D54B80ABF17C94EFDD45A5 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52C47CD02664E922009E79BF /* PBXTargetDependency */,
-			);
-			name = SwiftAssignmentUITests;
-			productName = SwiftAssignmentUITests;
-			productReference = 52C47CCE2664E922009E79BF /* SwiftAssignmentUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -302,10 +251,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					52C47CC22664E922009E79BF = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 52C47CAC2664E920009E79BF;
-					};
-					52C47CCD2664E922009E79BF = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 52C47CAC2664E920009E79BF;
 					};
@@ -326,7 +271,6 @@
 			targets = (
 				52C47CAC2664E920009E79BF /* SwiftAssignment */,
 				52C47CC22664E922009E79BF /* SwiftAssignmentTests */,
-				52C47CCD2664E922009E79BF /* SwiftAssignmentUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -348,38 +292,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52C47CCC2664E922009E79BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		79F0D01CF9DA975B23FE924D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SwiftAssignment-SwiftAssignmentUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BE4048F296FE73C3964BAB4D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,23 +356,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7D54B80ABF17C94EFDD45A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftAssignment-SwiftAssignmentUITests/Pods-SwiftAssignment-SwiftAssignmentUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SwiftAssignment-SwiftAssignmentUITests/Pods-SwiftAssignment-SwiftAssignmentUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftAssignment-SwiftAssignmentUITests/Pods-SwiftAssignment-SwiftAssignmentUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -486,14 +384,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52C47CCA2664E922009E79BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52C47CD32664E922009E79BF /* SwiftAssignmentUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -501,11 +391,6 @@
 			isa = PBXTargetDependency;
 			target = 52C47CAC2664E920009E79BF /* SwiftAssignment */;
 			targetProxy = 52C47CC42664E922009E79BF /* PBXContainerItemProxy */;
-		};
-		52C47CD02664E922009E79BF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 52C47CAC2664E920009E79BF /* SwiftAssignment */;
-			targetProxy = 52C47CCF2664E922009E79BF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -685,7 +570,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftAssignmentTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,7 +592,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SwiftAssignmentTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -718,46 +603,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftAssignment.app/SwiftAssignment";
-			};
-			name = Release;
-		};
-		52C47CDE2664E922009E79BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F1EF674032D7DA8507B3571 /* Pods-SwiftAssignment-SwiftAssignmentUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftAssignmentUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cognizant.iOS.SwiftAssignmentUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftAssignment;
-			};
-			name = Debug;
-		};
-		52C47CDF2664E922009E79BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC05536C51246055FCA0B9B4 /* Pods-SwiftAssignment-SwiftAssignmentUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftAssignmentUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Cognizant.iOS.SwiftAssignmentUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SwiftAssignment;
 			};
 			name = Release;
 		};
@@ -787,15 +632,6 @@
 			buildConfigurations = (
 				52C47CDB2664E922009E79BF /* Debug */,
 				52C47CDC2664E922009E79BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52C47CDD2664E922009E79BF /* Build configuration list for PBXNativeTarget "SwiftAssignmentUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52C47CDE2664E922009E79BF /* Debug */,
-				52C47CDF2664E922009E79BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
